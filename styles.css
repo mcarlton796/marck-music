@@ -1,0 +1,232 @@
+body{
+    background-color: black;
+    height: auto;
+}
+
+#container{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.name{
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    width: auto;
+    max-width: 300px;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition-duration: 0.9s;
+}
+
+.name:hover{
+    cursor: pointer;
+}
+
+.name-altered:hover{
+    cursor: pointer;
+}
+
+.name-altered{
+    position: absolute;
+    text-align: center;
+    transition-duration: 0.9s;
+    left: 50%;
+    transform: translate(-50%, -47%);
+}
+
+#links{
+    width: 250px;
+}
+
+.links{
+    position: absolute;
+    text-align: center;
+    width: auto;
+    max-width: 300px;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    transition-duration: 0.4s;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    z-index: -1;
+}
+
+.links-altered{
+    position: absolute;
+    text-align: center;
+    width: auto;
+    max-width: 300px;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    transition-duration: 0.9s;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 100%;
+    transition-duration: 1.2s;
+    z-index: 1;
+    height: auto;
+}
+
+.links-altered h2{
+    font-family: "arial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    vertical-align: center;
+    margin: 0;
+    
+    color: white;
+}
+
+.links h2{
+    font-family: "arial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    vertical-align: center;
+    margin: 0;
+    
+    color: white;
+}
+
+.links h2:first-child{
+    transform: scale(1,0.78);
+}
+
+.links-altered h2:first-child{
+    transform: scale(1,0.78);
+}
+
+.links-altered h2:hover{
+    cursor: pointer;
+}
+
+h1{
+    font-family: "arial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+    vertical-align: center;
+    padding: 20px;
+    margin: 0;
+    transform: scale(1,0.78);
+    color: white;
+}
+
+#socials h2{
+    padding: 5px;
+}
+
+.socials{
+    transition-duration: 2s;
+}
+
+.socials-altered{
+    transition-duration: 2s;
+}
+
+#music{
+    position: absolute;
+
+}
+
+.music{
+    left: 50%;
+    transform: translate(-50%, 75%);
+    transition-duration: 0.3s;
+}
+
+.music-moved{
+    left: 50%;
+    transform: translate(-50%, 150%);
+    transition-duration: 0.3s;
+}
+
+.music-expanded{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 54%);
+    
+}
+
+#albums{
+    margin: auto;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px 4px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#albums img{
+    width: 100px;
+    height: auto;
+}
+
+.albums{
+    opacity: 0%;
+    pointer-events: none;
+    transition-duration: 0.3s;
+}
+
+.albums-expanded{
+    transition-duration: 0.3s;
+    opacity: 100%;
+    pointer-events: auto;
+}
+
+svg{
+    fill:white;
+}
+
+#svgs{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%, -20%);
+}
+
+.svgs{
+    display: none;
+    opacity: 0;
+    transition-duration: 0.3s;
+    z-index: -3;
+    pointer-events: none;
+}
+
+.svgs-altered{
+    opacity: 100;
+    transition-duration: 0.45s;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+#svgs a{
+    margin: 0px 3px;
+}
+
+.lords_kush, .sleeper_build, .titanic, .shabin, .bspt, .blunted, .flexin{
+    position: relative; /*Was absolute*/
+}
+
+.lords_kush_expanded, .sleeper_build_expanded, .titanic_expanded, .shabin_expanded, .bspt_expanded, .blunted_expanded, .flexin_expanded{
+    position: relative; /*Was absolute*/
+
+}
+
+/*.lords_kush_expanded img, .sleeper_build_expanded img, .titanic_expanded img, .shabin_expanded img, .bspt_expanded img, .blunted_expanded img, .flexin_expanded img{
+    
+}*/
