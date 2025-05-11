@@ -1,3 +1,7 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function dick(){
     let marck=document.querySelector('#content');
     let links=document.querySelector('#links');
@@ -49,12 +53,16 @@ function social(){
 
 function music(){
     let albums=document.querySelector('#albums');
-    if (albums.classList.contains('albums')){
-        albums.classList.remove('albums');
-        albums.classList.add('albums-expanded');
+    if (albums.classList.contains('album-displaynone')){
+        albums.classList.remove('album-displaynone');
+        albums.classList.add('albums');
+        sleep(50).then(() => {albums.classList.remove('albums');});
+        sleep(50).then(() => {albums.classList.add('albums-expanded');});
     } else if (albums.classList.contains('albums-expanded')){
         albums.classList.remove('albums-expanded');
         albums.classList.add('albums');
+        sleep(500).then(() => {albums.classList.remove('albums');});
+        sleep(500).then(() => {albums.classList.add('album-displaynone');});
     }
 }
 

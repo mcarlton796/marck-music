@@ -162,9 +162,6 @@ h1{
 #albums{
     margin: auto;
     position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 0px 4px;
     left: 50%;
     transform: translate(-50%, 0%);
 }
@@ -174,16 +171,33 @@ h1{
     height: auto;
 }
 
-.albums{
-    opacity: 0%;
-    pointer-events: none;
+.album-displaynone{
+    display: none;
     transition-duration: 0.3s;
 }
 
+.albums{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 0px 4px;
+    transition-duration: 0.3s;
+    opacity: 0%;
+    pointer-events: auto;
+    width: 310px;
+    height: 310px;
+}
+
 .albums-expanded{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 0px 4px;
     transition-duration: 0.3s;
     opacity: 100%;
     pointer-events: auto;
+    width: 310px;
+    height: 310px;
 }
 
 svg{
@@ -218,15 +232,161 @@ svg{
     margin: 0px 3px;
 }
 
-.lords_kush, .sleeper_build, .titanic, .shabin, .bspt, .blunted, .flexin{
-    position: relative; /*Was absolute*/
+.lords_kush{
+    position: absolute;
+    grid-column: 1;
+    grid-row: 1;
+    transition-duration: 0.5s;
+    z-index: 1;
+}
+.sleeper_build{
+    position: absolute;
+    grid-column: 2;
+    grid-row: 1;
+    transition-duration: 0.5s;
+    z-index: 1;
+}
+.titanic{
+    position: absolute;
+    grid-column: 3;
+    grid-row: 1;
+    transition-duration: 0.5s;
+    z-index: 1;
+}
+.shabin{
+    position: absolute;
+    grid-column: 1;
+    grid-row: 2;
+    transition-duration: 0.5s;
+    z-index: 1;
+}
+.bspt{
+    position: absolute;
+    grid-column: 2;
+    grid-row: 2;
+    transition-duration: 0.5s;
+    z-index: 1;
+}
+.blunted{
+    position: absolute;
+    grid-column: 3;
+    grid-row: 2;
+    transition-duration: 0.5s;
+    z-index: 1;
+}
+.flexin{
+    position: absolute;
+    grid-column: 1;
+    grid-row: 3;
+    transition-duration: 0.5s;
+    z-index: 1;
 }
 
-.lords_kush_expanded, .sleeper_build_expanded, .titanic_expanded, .shabin_expanded, .bspt_expanded, .blunted_expanded, .flexin_expanded{
-    position: relative; /*Was absolute*/
-
+.lords_kush_expanded{
+    position: absolute;
+    transform: translate(105%, -110%) scale(270%);
+    height: 120px;
+    transition-duration: 0.5s;
+    z-index: 5;
+    background-color: rgb(180, 171, 159);
 }
 
-/*.lords_kush_expanded img, .sleeper_build_expanded img, .titanic_expanded img, .shabin_expanded img, .bspt_expanded img, .blunted_expanded img, .flexin_expanded img{
-    
-}*/
+.lords_kush_expanded img{
+    transform: scale(90%);
+    transition-duration: 0.5s;
+}
+.sleeper_build_expanded{
+    position: absolute;
+    grid-column: 2;
+    grid-row: 1;
+    transform: translate(0%, -110%) scale(270%);
+    height: 120px;
+    transition-duration: 0.5s;
+    z-index: 5;
+    background-color: rgb(180, 171, 159);
+}
+
+.sleeper_build_expanded img{
+    transform: scale(90%);
+    transition-duration: 0.5s;
+}
+
+.titanic_expanded{
+    position: absolute;
+    grid-column: 3;
+    grid-row: 1;
+    transform: translate(-105%, -110%) scale(270%);
+    height: 120px;
+    transition-duration: 0.5s;
+    z-index: 5;
+    background-color: rgb(180, 171, 159);
+}
+
+.titanic_expanded img{
+    transform: scale(90%);
+    transition-duration: 0.5s;
+}
+
+.shabin_expanded{
+    position: absolute;
+    grid-column: 1;
+    grid-row: 2;
+    transform: translate(105%, -200%) scale(270%);
+    height: 120px;
+    transition-duration: 0.5s;
+    z-index: 5;
+    background-color: rgb(180, 171, 159);
+}
+
+.shabin_expanded img{
+    transform: scale(90%);
+    transition-duration: 0.5s;
+}
+
+.bspt_expanded{
+    position: absolute;
+    grid-column: 2;
+    grid-row: 2;
+    transform: translate(0%, -200%) scale(270%);
+    height: 120px;
+    transition-duration: 0.5s;
+    z-index: 5;
+    background-color: rgb(180, 171, 159);
+}
+
+.bspt_expanded img{
+    transform: scale(90%);
+    transition-duration: 0.5s;
+}
+
+.blunted_expanded{
+    position: absolute;
+    grid-column: 3;
+    grid-row: 2;
+    transform: translate(-105%, -200%) scale(270%);
+    height: 120px;
+    transition-duration: 0.5s;
+    z-index: 5;
+    background-color: rgb(180, 171, 159);
+}
+
+.blunted_expanded img{
+    transform: scale(90%);
+    transition-duration: 0.5s;
+}
+
+.flexin_expanded{
+    position: absolute;
+    grid-column: 1;
+    grid-row: 3;
+    transform: translate(105%, -280%) scale(270%);
+    height: 120px;
+    transition-duration: 0.5s;
+    z-index: 5;
+    background-color: rgb(180, 171, 159);
+}
+
+.flexin_expanded img{
+    transform: scale(90%);
+    transition-duration: 0.5s;
+}
