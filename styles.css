@@ -390,3 +390,14 @@ svg{
     transform: scale(90%);
     transition-duration: 0.5s;
 }
+
+.music-links{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -17%);
+}
+
+.music-links a{
+    margin: 0px 2px;
+}
