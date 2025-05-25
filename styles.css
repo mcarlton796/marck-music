@@ -396,6 +396,17 @@ svg{
     position: absolute;
     left: 50%;
     transform: translate(-50%, -17%);
+    opacity: 0%;
+    transition-duration: 0.2s;
+}
+
+.music-links-altered{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -17%);
+    opacity: 100%;
+    transition-duration: 1s;
 }
 
 .music-links a{
