@@ -70,12 +70,32 @@ function album(album_id){
     let albums=document.querySelector('#albums');
     const hash = "#";
     const expand = album_id + "_expanded";
+    let socials=document.querySelector('#socials');
+    let svgs=document.querySelector('#svgs');
+    let music=document.querySelector('#music');
     let release=document.querySelector(hash.concat("",album_id));
+    let links=document.querySelector(hash.concat("",album_id) + " div")
     if(release.classList.contains(album_id)){
+        if(socials.classList.contains("socials-altered")){
+            socials.classList.remove("socials-altered");
+            socials.classList.add("socials");
+            if(svgs.classList.contains("svgs-altered")){
+                svgs.classList.remove("svgs-altered");
+                svgs.classList.add("svgs");
+            }
+            if(music.classList.contains("music-moved")){
+                music.classList.remove("music-moved");
+                music.classList.add("music");
+            }
+        }
         release.classList.remove(album_id);
         release.classList.add(expand);
+        links.classList.remove("music-links");
+        links.classList.add("music-links-altered");
     }else if(release.classList.contains(expand)){
         release.classList.remove(expand);
         release.classList.add(album_id);
+        links.classList.remove("music-links-altered");
+        links.classList.add("music-links");
     }
 }

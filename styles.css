@@ -198,6 +198,7 @@ h1{
     pointer-events: auto;
     width: 310px;
     height: 310px;
+    z-index: 3;
 }
 
 svg{
