@@ -2,13 +2,20 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function fade(){
+    let marck=document.getElementById('content');
+    marck.classList.add("name-2");
+    sleep(800).then(() => {});
+    marck.classList.remove("name");
+}
+
 function dick(){
     let marck=document.querySelector('#content');
     let links=document.querySelector('#links');
     let socials=document.querySelector('#socials');
     let albums=document.querySelector('#albums');
-    if (marck.classList.contains('name')){
-        marck.classList.remove('name');
+    if (marck.classList.contains('name-2')){
+        marck.classList.remove('name-2');
         marck.classList.add('name-altered');
         links.classList.remove('links');
         links.classList.add('links-altered')
@@ -21,7 +28,7 @@ function dick(){
             music();
         }
         marck.classList.remove('name-altered');
-        marck.classList.add('name');
+        marck.classList.add('name-2');
         links.classList.remove('links-altered');
         links.classList.add('links')
     }
@@ -99,3 +106,6 @@ function album(album_id){
         links.classList.add("music-links");
     }
 }
+
+fade();
+sleep(800).then(() => {dick()});
