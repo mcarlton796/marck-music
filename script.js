@@ -1,12 +1,25 @@
+// event handlers
+let marck = document.getElementById("content");
+let socials = document.getElementById("socials");
+let musics = document.querySelector("#music h2");
+
+marck.addEventListener("click", dick);
+socials.addEventListener("click", social);
+musics.addEventListener("click", music);
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function fade(){
-    let marck=document.getElementById('content');
-    marck.classList.add("name-2");
-    sleep(800).then(() => {});
-    marck.classList.remove("name");
+    if(window.innerWidth < 1200){
+        let marck=document.getElementById('content');
+        marck.classList.add("name-2");
+        sleep(800).then(() => {});
+        marck.classList.remove("name");
+    }else{
+
+    }
 }
 
 function dick(){
@@ -14,23 +27,26 @@ function dick(){
     let links=document.querySelector('#links');
     let socials=document.querySelector('#socials');
     let albums=document.querySelector('#albums');
-    if (marck.classList.contains('name-2')){
-        marck.classList.remove('name-2');
-        marck.classList.add('name-altered');
-        links.classList.remove('links');
-        links.classList.add('links-altered')
-    }
-    else if (marck.classList.contains('name-altered')){
-        if (socials.classList.contains('socials-altered')){
-            social();
+
+    if(window.innerWidth < 1200){
+        if (marck.classList.contains('name-2')){
+            marck.classList.remove('name-2');
+            marck.classList.add('name-altered');
+            links.classList.remove('links');
+            links.classList.add('links-altered')
         }
-        if (albums.classList.contains('albums-expanded')){
-            music();
+        else if (marck.classList.contains('name-altered')){
+            if (socials.classList.contains('socials-altered')){
+                social();
+            }
+            if (albums.classList.contains('albums-expanded')){
+                music();
+            }
+            marck.classList.remove('name-altered');
+            marck.classList.add('name-2');
+            links.classList.remove('links-altered');
+            links.classList.add('links')
         }
-        marck.classList.remove('name-altered');
-        marck.classList.add('name-2');
-        links.classList.remove('links-altered');
-        links.classList.add('links')
     }
 }
 
@@ -40,36 +56,41 @@ function social(){
     let music=document.querySelector('#music');
     let albums=document.querySelector('#albums');
 
-    if (socials.classList.contains('socials')){
-        music.classList.remove('music');
-        music.classList.add('music-moved');
-        svgs.classList.remove('svgs');
-        svgs.classList.add('svgs-altered');
-        socials.classList.remove('socials');
-        socials.classList.add('socials-altered');
-    }
-    else if (socials.classList.contains('socials-altered')){
-        svgs.classList.remove('svgs-altered');
-        svgs.classList.add('svgs');
-        socials.classList.remove('socials-altered');
-        socials.classList.add('socials');
-        music.classList.remove('music-moved');
-        music.classList.add('music');
+    if(window.innerWidth < 1200){
+        if (socials.classList.contains('socials')){
+            music.classList.remove('music');
+            music.classList.add('music-moved');
+            svgs.classList.remove('svgs');
+            svgs.classList.add('svgs-altered');
+            socials.classList.remove('socials');
+            socials.classList.add('socials-altered');
+        }
+        else if (socials.classList.contains('socials-altered')){
+            svgs.classList.remove('svgs-altered');
+            svgs.classList.add('svgs');
+            socials.classList.remove('socials-altered');
+            socials.classList.add('socials');
+            music.classList.remove('music-moved');
+            music.classList.add('music');
+        }
     }
 }
 
 function music(){
     let albums=document.querySelector('#albums');
-    if (albums.classList.contains('album-displaynone')){
-        albums.classList.remove('album-displaynone');
-        albums.classList.add('albums');
-        sleep(50).then(() => {albums.classList.remove('albums');});
-        sleep(50).then(() => {albums.classList.add('albums-expanded');});
-    } else if (albums.classList.contains('albums-expanded')){
-        albums.classList.remove('albums-expanded');
-        albums.classList.add('albums');
-        sleep(500).then(() => {albums.classList.remove('albums');});
-        sleep(500).then(() => {albums.classList.add('album-displaynone');});
+    
+    if(window.innerWidth < 1200){
+        if (albums.classList.contains('album-displaynone')){
+            albums.classList.remove('album-displaynone');
+            albums.classList.add('albums');
+            sleep(50).then(() => {albums.classList.remove('albums');});
+            sleep(50).then(() => {albums.classList.add('albums-expanded');});
+        } else if (albums.classList.contains('albums-expanded')){
+            albums.classList.remove('albums-expanded');
+            albums.classList.add('albums');
+            sleep(500).then(() => {albums.classList.remove('albums');});
+            sleep(500).then(() => {albums.classList.add('album-displaynone');});
+        }
     }
 }
 
@@ -82,28 +103,30 @@ function album(album_id){
     let music=document.querySelector('#music');
     let release=document.querySelector(hash.concat("",album_id));
     let links=document.querySelector(hash.concat("",album_id) + " div")
-    if(release.classList.contains(album_id)){
-        if(socials.classList.contains("socials-altered")){
-            socials.classList.remove("socials-altered");
-            socials.classList.add("socials");
-            if(svgs.classList.contains("svgs-altered")){
-                svgs.classList.remove("svgs-altered");
-                svgs.classList.add("svgs");
+    if(window.innerWidth < 1200){
+        if(release.classList.contains(album_id)){
+            if(socials.classList.contains("socials-altered")){
+                socials.classList.remove("socials-altered");
+                socials.classList.add("socials");
+                if(svgs.classList.contains("svgs-altered")){
+                    svgs.classList.remove("svgs-altered");
+                    svgs.classList.add("svgs");
+                }
+                if(music.classList.contains("music-moved")){
+                    music.classList.remove("music-moved");
+                    music.classList.add("music");
+                }
             }
-            if(music.classList.contains("music-moved")){
-                music.classList.remove("music-moved");
-                music.classList.add("music");
-            }
+            release.classList.remove(album_id);
+            release.classList.add(expand);
+            links.classList.remove("music-links");
+            links.classList.add("music-links-altered");
+        }else if(release.classList.contains(expand)){
+            release.classList.remove(expand);
+            release.classList.add(album_id);
+            links.classList.remove("music-links-altered");
+            links.classList.add("music-links");
         }
-        release.classList.remove(album_id);
-        release.classList.add(expand);
-        links.classList.remove("music-links");
-        links.classList.add("music-links-altered");
-    }else if(release.classList.contains(expand)){
-        release.classList.remove(expand);
-        release.classList.add(album_id);
-        links.classList.remove("music-links-altered");
-        links.classList.add("music-links");
     }
 }
 
