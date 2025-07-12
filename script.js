@@ -105,6 +105,7 @@ function album(album_id){
     let links=document.querySelector(hash.concat("",album_id) + " div")
     let yuh = document.getElementsByClassName("yuh");
     console.log(yuh)
+    
     if(window.innerWidth < 720){
         if(release.classList.contains(album_id)){
             if(socials.classList.contains("socials-altered")){
