@@ -259,59 +259,85 @@
         margin: 0px 3px;
     }
 
-    .lords_kush{
+    .FF{
         position: absolute;
         grid-column: 1;
+        grid-row: 1;
+        transition-duration: 0.5s;
+        z-index: 1;
+    }
+
+    .lords_kush{
+        position: absolute;
+        grid-column: 2;
         grid-row: 1;
         transition-duration: 0.5s;
         z-index: 1;
     }
     .sleeper_build{
         position: absolute;
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 1;
         transition-duration: 0.5s;
         z-index: 1;
     }
     .titanic{
         position: absolute;
-        grid-column: 3;
-        grid-row: 1;
-        transition-duration: 0.5s;
-        z-index: 1;
-    }
-    .shabin{
-        position: absolute;
         grid-column: 1;
         grid-row: 2;
         transition-duration: 0.5s;
         z-index: 1;
     }
-    .bspt{
+    .shabin{
         position: absolute;
         grid-column: 2;
         grid-row: 2;
         transition-duration: 0.5s;
         z-index: 1;
     }
-    .blunted{
+    .bspt{
         position: absolute;
         grid-column: 3;
         grid-row: 2;
         transition-duration: 0.5s;
         z-index: 1;
     }
-    .flexin{
+    .blunted{
         position: absolute;
         grid-column: 1;
         grid-row: 3;
         transition-duration: 0.5s;
         z-index: 1;
     }
+    .flexin{
+        position: absolute;
+        grid-column: 2;
+        grid-row: 3;
+        transition-duration: 0.5s;
+        z-index: 1;
+    }
+
+    .FF_expanded{
+        position: absolute;
+        transform: translate(105%, -110%) scale(270%);
+        height: 120px;
+        transition-duration: 0.5s;
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 5;
+        background-color: rgb(180, 171, 159);
+    }
+
+    .FF_expanded img{
+        transform: scale(90%);
+        transition-duration: 0.5s;
+    }
 
     .lords_kush_expanded{
         position: absolute;
-        transform: translate(105%, -110%) scale(270%);
+        transform: translate(0%, -110%) scale(270%);
+        grid-column: 2;
+        grid-row: 1;
         height: 120px;
         transition-duration: 0.5s;
         z-index: 5;
@@ -324,9 +350,9 @@
     }
     .sleeper_build_expanded{
         position: absolute;
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 1;
-        transform: translate(0%, -110%) scale(270%);
+        transform: translate(-105%, -110%) scale(270%);
         height: 120px;
         transition-duration: 0.5s;
         z-index: 5;
@@ -340,9 +366,9 @@
 
     .titanic_expanded{
         position: absolute;
-        grid-column: 3;
-        grid-row: 1;
-        transform: translate(-105%, -110%) scale(270%);
+        grid-column: 1;
+        grid-row: 2;
+        transform: translate(105%, -200%) scale(270%);
         height: 120px;
         transition-duration: 0.5s;
         z-index: 5;
@@ -356,9 +382,9 @@
 
     .shabin_expanded{
         position: absolute;
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 2;
-        transform: translate(105%, -200%) scale(270%);
+        transform: translate(0%, -200%) scale(270%);
         height: 120px;
         transition-duration: 0.5s;
         z-index: 5;
@@ -372,9 +398,9 @@
 
     .bspt_expanded{
         position: absolute;
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 2;
-        transform: translate(0%, -200%) scale(270%);
+        transform: translate(-105%, -200%) scale(270%);
         height: 120px;
         transition-duration: 0.5s;
         z-index: 5;
@@ -388,9 +414,9 @@
 
     .blunted_expanded{
         position: absolute;
-        grid-column: 3;
-        grid-row: 2;
-        transform: translate(-105%, -200%) scale(270%);
+        grid-column: 1;
+        grid-row: 3;
+        transform: translate(105%, -280%) scale(270%);
         height: 120px;
         transition-duration: 0.5s;
         z-index: 5;
@@ -404,9 +430,9 @@
 
     .flexin_expanded{
         position: absolute;
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 3;
-        transform: translate(105%, -280%) scale(270%);
+        transform: translate(0%, -280%) scale(270%);
         height: 120px;
         transition-duration: 0.5s;
         z-index: 5;

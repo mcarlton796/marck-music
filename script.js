@@ -12,7 +12,7 @@ function sleep(ms) {
 }
 
 function fade(){
-    if(window.innerWidth < 1200){
+    if(window.innerWidth < 720){
         let marck=document.getElementById('content');
         marck.classList.add("name-2");
         sleep(800).then(() => {});
@@ -28,7 +28,7 @@ function dick(){
     let socials=document.querySelector('#socials');
     let albums=document.querySelector('#albums');
 
-    if(window.innerWidth < 1200){
+    if(window.innerWidth < 720){
         if (marck.classList.contains('name-2')){
             marck.classList.remove('name-2');
             marck.classList.add('name-altered');
@@ -56,7 +56,7 @@ function social(){
     let music=document.querySelector('#music');
     let albums=document.querySelector('#albums');
 
-    if(window.innerWidth < 1200){
+    if(window.innerWidth < 720){
         if (socials.classList.contains('socials')){
             music.classList.remove('music');
             music.classList.add('music-moved');
@@ -79,7 +79,7 @@ function social(){
 function music(){
     let albums=document.querySelector('#albums');
     
-    if(window.innerWidth < 1200){
+    if(window.innerWidth < 720){
         if (albums.classList.contains('album-displaynone')){
             albums.classList.remove('album-displaynone');
             albums.classList.add('albums');
@@ -103,7 +103,9 @@ function album(album_id){
     let music=document.querySelector('#music');
     let release=document.querySelector(hash.concat("",album_id));
     let links=document.querySelector(hash.concat("",album_id) + " div")
-    if(window.innerWidth < 1200){
+    let yuh = document.getElementsByClassName("yuh");
+    console.log(yuh)
+    if(window.innerWidth < 720){
         if(release.classList.contains(album_id)){
             if(socials.classList.contains("socials-altered")){
                 socials.classList.remove("socials-altered");
@@ -130,5 +132,7 @@ function album(album_id){
     }
 }
 
-fade();
-sleep(800).then(() => {dick()});
+if(window.innerWidth < 720){
+    fade();
+    sleep(800).then(() => {dick()});
+}
