@@ -104,7 +104,6 @@ function album(album_id){
     let release=document.querySelector(hash.concat("",album_id));
     let links=document.querySelector(hash.concat("",album_id) + " div")
     let yuh = document.getElementsByClassName("yuh");
-    console.log(yuh)
     
     if(window.innerWidth < 720){
         if(release.classList.contains(album_id)){
@@ -118,6 +117,16 @@ function album(album_id){
                 if(music.classList.contains("music-moved")){
                     music.classList.remove("music-moved");
                     music.classList.add("music");
+                }
+            }
+            for(let x of yuh){
+                let expanded = x.id + "_expanded";
+                let linketh = document.querySelector(hash.concat("",x.id) + " div")
+                if(x.classList.contains(expanded) && x.id != album_id){
+                    x.classList.remove(expanded);
+                    x.classList.add(x.id);
+                    linketh.classList.remove("music-links-altered");
+                    linketh.classList.add("music-links");
                 }
             }
             release.classList.remove(album_id);
